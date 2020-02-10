@@ -1,4 +1,4 @@
-package testbdd;
+package test.testbdd;
 /**
  * @author: Alexandre PUTZU
  * @author: Baptiste BUSNOULT

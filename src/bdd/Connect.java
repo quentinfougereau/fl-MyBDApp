@@ -3,6 +3,8 @@ package bdd;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.TimeZone;
+
 /*classe de connection à une base de donnée mysql locale
  *Les opérations de cette classes ne servent qu'à la connection
  *pour mieux séparer connection/deconnection des opérations
@@ -50,7 +52,7 @@ public class Connect {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String url = "jdbc:mysql://localhost/DBTest";
+		String url = "jdbc:mysql://localhost/DBTest?serverTimezone=" + TimeZone.getDefault().getID();
 		String user = "root";
 		String passwd = "root";
 		Connect connect = new Connect(url, user, passwd);

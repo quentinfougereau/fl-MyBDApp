@@ -3,6 +3,8 @@ package bdd;
 import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.TimeZone;
+
 import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
@@ -38,10 +40,10 @@ public class DBExtracteur {
 	}
 
 	public static void main(String[] args) {
-		String driver = "com.mysql.jdbc.Driver";
-		String url = "jdbc:mysql://localhost/DBTest";
-		String  user = "adminDBTest";
-		String passwd = "passwdDBTest";
+		String driver = "com.mysql.cj.jdbc.Driver";
+		String url = "jdbc:mysql://localhost/DBTest?serverTimezone=" + TimeZone.getDefault().getID();
+		String  user = "root";
+		String passwd = "root";
 		String xmlDataSetName = "xml/fulldataset.xml";
 		DBExtracteur dbExtracteur = new DBExtracteur(driver, url, user, passwd, xmlDataSetName);		
 	}

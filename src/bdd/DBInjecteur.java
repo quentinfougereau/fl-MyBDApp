@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.TimeZone;
 
 import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
@@ -22,7 +23,7 @@ public class DBInjecteur {
 	public static void main(String[] args) {
 		/*attributs pour la base de données*/
 		String driver = "com.mysql.cj.jdbc.Driver";
-		String url = "jdbc:mysql://localhost/DBTest";
+		String url = "jdbc:mysql://localhost/DBTest?serverTimezone=" + TimeZone.getDefault().getID();
 		String  user = "root";
 		String passwd = "root";
 
